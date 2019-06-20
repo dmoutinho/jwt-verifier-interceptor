@@ -22,7 +22,6 @@
 			<groupId>com.sensedia</groupId>
 			<artifactId>api-interceptor-java-spec</artifactId>
 			<version>3.0.1</version>
-			<scope>provided</scope>
 			<!-- 
 			<scope>compile</scope>
 			<scope>provided</scope>
