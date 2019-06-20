@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.sensedia</groupId>
+	<artifactId>jwt-verifier-interceptor</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<name>jwt-verifier-interceptor</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<interceptor-java-spec.version>3.0.1</interceptor-java-spec.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	    <maven.compiler.source>1.6</maven.compiler.source>
+	    <maven.compiler.target>1.6</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.sensedia</groupId>
+			<artifactId>api-interceptor-java-spec</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+			<!-- 
+			<scope>compile</scope>
+			<scope>provided</scope>
+			 -->
+		</dependency>
+		<dependency>
+		    <groupId>com.auth0</groupId>
+		    <artifactId>java-jwt</artifactId>
+		    <version>3.8.1</version>
+		</dependency>		
+	</dependencies>
+	
+	<!-- mvn clean compile assembly:single -->
+	<build>
+	  <plugins>
+	    <plugin>
+	      <artifactId>maven-assembly-plugin</artifactId>
+	      <configuration>
+	        <archive>
+	          <manifest>
+	            <mainClass>fully.qualified.MainClass</mainClass>
+	          </manifest>
+	        </archive>
+	        <descriptorRefs>
+	          <descriptorRef>jar-with-dependencies</descriptorRef>
+	        </descriptorRefs>
+	      </configuration>
+	    </plugin>
+	  </plugins>
+	</build>
+  
+	<developers>
+		<developer>
+			<name>Diogo Moutinho</name>
+			<email>diogo.moutinho@sensedia.com</email>
+			<organization>Sensedia</organization>
+			<organizationUrl>https://sensedia.com</organizationUrl>
+		</developer>
+	</developers>
+	
+</project>
